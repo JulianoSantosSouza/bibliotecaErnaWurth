@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Sistema de Biblioteca Virtual</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> 
+    </head>
+    <body>
+        <img th:src="@{/images/dado.png}"> 
+        <h1>Sistema de Biblioteca da Escola Erna Würth</h1>
+        
+        <nav>
+            <a th:href="@{/}">Início</a>
+            <a th:href="@{/cadastrarLivro}">Cadastro de Livro</a>
+            <a th:href="@{/cadastrarAluno}">Cadastro de Aluno</a>
+            <a th:href="@{/emprestimoLivro}">Emprestimo de Livro</a>
+            <a th:href="@{/devolucaoLivro}">Devolução de Livro</a>
+            <a th:href="@{/listaLivro}">Listagem de Livro</a>
+            <a th:href="@{/listaAlunos}">Listagem de Aluno</a>
+            <a th:href="@{/listaEmprestimo}">Listagem de Empréstimo</a>
+            <a th:href="@{/listaDevolucao}">Listagem de Devolução</a>
+        </nav>
+        <br>
+        <br>
+        <h4>Cadastro de Aluno</h4>
+        <br>
+        <form th:action="@{/gravarAluno}" th:object="${aluno}" method="post">
+            <p>Nome: <input type="text" th:field="${aluno.nomeUsuario}" /> </p>
+            <p>Sexo: <input type="text" th:field="${aluno.sexo}" /></p>
+             <p>Data de Nascimento: <input type="date" th:field="${aluno.dataNascimento}" /></p>
+            <p>E-mail do Aluno: <input type="text" th:field="${aluno.email}" /></p>
+            <p>Número da Matrícula: <input type="text" th:field="${aluno.matriculaEscolar}" /></p>
+            <p>Série: <input type="text" th:field="${aluno.serie}" /></p>
+            <p><input type="submit" value="Cadastrar" /></p> 
+          </form>   
+        <a th:href="@{/}"><button type="button" class="btn btn-dark" th:href="@{/}">Voltar</button></a>
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>       
+        
+        
+    </body>
+</html>
